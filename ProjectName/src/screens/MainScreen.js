@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {SafeAreaView,ScrollView,StyleSheet,Text,View, TouchableOpacity} from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import Icon from 'react-native-vector-icons/Feather';
+import { getStoreList, getStoreInfo } from '../api/databaseApi';
+
 
 const styles = StyleSheet.create({
   ButtonContainer: {
@@ -110,10 +112,10 @@ const MainScreen= ({navigation}) => {
   const id = [0, 1, 2]
   const buttonList = id.map((button)=> (
     <View style ={styles.RowContainer}>
-      <AppButton onPress={()=>navigation.navigate('DETAIL')}/>
+      <AppButton onPress={()=>{navigation.navigate('DETAIL')}}/>
       <AppButton onPress={()=>navigation.navigate('DETAIL')}/>
       </View>))
-  const seesaw = ["성수/AWA", "서촌/Red Room", "명동/Poethic AI"]
+  const seesaw = ["성수/AWA", "서촌/Red Room", "명동d/Poethic AI"]
   return (
     <SafeAreaView>
       <View style ={styles.Header}>
